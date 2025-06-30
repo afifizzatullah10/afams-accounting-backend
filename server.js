@@ -561,7 +561,7 @@ app.use((error, req, res, next) => {
 });
 
 // 404 handler
-app.use('*', (req, res) => {
+app.use((req, res) => {
     res.status(404).json({
         success: false,
         message: 'Endpoint tidak ditemukan'
@@ -574,5 +574,3 @@ app.listen(PORT, () => {
     console.log(`📊 Environment: ${process.env.NODE_ENV}`);
     console.log(`🌐 Frontend URL: ${process.env.FRONTEND_URL}`);
 });
-
-
